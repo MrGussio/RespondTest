@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RespondTest</string>
+    <string name="introText">Klik op één van de knoppen hieronder om een modus te selecteren.</string>
+    <string name="soundButton">Geluid</string>
+    <string name="sightButton">Zicht</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+</resources>
