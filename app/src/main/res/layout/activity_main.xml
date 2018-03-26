@@ -42,7 +42,7 @@
         android:text="@string/sightButton" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/testCount"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sightButton"
@@ -51,25 +51,25 @@
         android:ems="10"
         android:gravity="center|clip_horizontal"
         android:inputType="numberSigned"
-        tools:text="10" />
+        android:text="10" />
 
     <Button
         android:id="@+id/increaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText"
-        android:layout_toLeftOf="@+id/editText"
-        android:layout_toStartOf="@+id/editText"
+        android:layout_alignTop="@+id/testCount"
+        android:layout_toLeftOf="@+id/testCount"
+        android:layout_toStartOf="@+id/testCount"
         android:text="@string/plus" />
 
     <Button
         android:id="@+id/decreaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
+        android:layout_alignBaseline="@+id/testCount"
+        android:layout_alignBottom="@+id/testCount"
+        android:layout_toEndOf="@+id/testCount"
+        android:layout_toRightOf="@+id/testCount"
         android:text="@string/minus" />
 
 </RelativeLayout>
