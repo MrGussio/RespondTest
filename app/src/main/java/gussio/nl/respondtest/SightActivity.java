@@ -83,7 +83,7 @@ public class SightActivity extends AppCompatActivity {
                                 if(count == 0){
                                     String message = "";
                                     for(int i = 0; i < results.length; i++){
-                                        message = message+getString(R.string.test)+" "+(i+1)+": "+(results[i] > 0 ? results[i]+"": "Fout.")+"ms \n";
+                                        message = message+getString(R.string.test)+" "+(i+1)+": "+(results[i] > 0 ? results[i]+"ms": "Fout.")+"\n";
                                     }
                                     AlertDialog alertDialog = new AlertDialog.Builder(SightActivity.this, R.style.ThemeOverlay_AppCompat_Dark).create();
                                     alertDialog.setTitle(R.string.results);
