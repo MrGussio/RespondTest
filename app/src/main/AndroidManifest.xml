@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SightActivity"></activity>
+        <activity android:name=".SightActivity" />
+        <activity android:name=".SoundActivity"></activity>
     </application>
 
 </manifest>

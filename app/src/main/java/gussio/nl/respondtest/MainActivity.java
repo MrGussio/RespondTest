@@ -136,6 +136,39 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int testValue, minValue, maxValue;
+                try {
+                    testValue = Integer.parseInt(testCount.getText().toString());
+                    minValue = Integer.parseInt(minCount.getText().toString());
+                    maxValue = Integer.parseInt(maxCount.getText().toString());
+                    if(testValue < 1){
+                        Toast.makeText(MainActivity.this, R.string.countTooLowMessage, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if(minValue > maxValue){
+                        Toast.makeText(MainActivity.this, R.string.minGreaterThanMaxMessage, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }catch (Exception e){
+                    testValue = R.integer.testCountDefault;
+                    minValue = R.integer.minCountDefault;
+                    maxValue = R.integer.maxCountDefault;
+                }
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt("testCount", testValue);
+                editor.putInt("minCount", minValue);
+                editor.putInt("maxCount", maxValue);
+                editor.commit();
+
+                Intent intent = new Intent(getApplicationContext(), SoundActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
