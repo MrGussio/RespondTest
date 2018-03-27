@@ -1,17 +1,14 @@
 package gussio.nl.respondtest;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.Build;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.ContextThemeWrapper;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,7 +16,7 @@ import android.widget.RelativeLayout;
 
 public class SightActivity extends AppCompatActivity {
 
-    private int count;
+    private int count, minTimer, maxTimer;
     private long cooldown=0L, resetCooldown=0L, timer=0L;
     private RelativeLayout layout;
     private long[] results;
@@ -37,15 +34,18 @@ public class SightActivity extends AppCompatActivity {
         layout = findViewById(R.id.sightLayout);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        count = sharedPref.getInt("testCount", 10);
+        count = sharedPref.getInt("testCount", R.integer.testCountDefault);
+        minTimer = sharedPref.getInt("minCount", R.integer.minCountDefault)*1000;
+        maxTimer = sharedPref.getInt("maxCount", R.integer.maxCountDefault)*1000;
         cooldown = generateRandomTimeValue();
         results = new long[count];
-        layout.setOnClickListener(new View.OnClickListener() {
+        layout.performClick();
+        layout.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(timer > 0L){
-                    long delta = System.currentTimeMillis()-timer;
-                    Log.d("delta", Long.toString(delta));
+                    long current = System.currentTimeMillis();
+                    long delta = current-timer;
                     results[results.length-count]=delta;
                     count--;
                     timer = 0L;
@@ -60,6 +60,7 @@ public class SightActivity extends AppCompatActivity {
                     resetCooldown = System.currentTimeMillis()+500;
                     layout.setBackgroundColor(Color.RED);
                 }
+                return false;
             }
         });
         update();
@@ -74,8 +75,8 @@ public class SightActivity extends AppCompatActivity {
                         public void run() {
                             if (resetCooldown == 0L && cooldown != 0 && cooldown < System.currentTimeMillis()) { //Wanneer de cooldown voorbij is
                                 cooldown = 0L;
-                                timer = System.currentTimeMillis();
                                 layout.setBackgroundColor(Color.BLUE);
+                                timer = System.currentTimeMillis();
                             }
                             if(resetCooldown > 0L && resetCooldown < System.currentTimeMillis()){//Wanneer de resetcooldown voorbij is
                                 resetCooldown = 0L;
@@ -115,8 +116,8 @@ public class SightActivity extends AppCompatActivity {
     }
 
     private long generateRandomTimeValue(){
+        long increase = minTimer+(long) (Math.random()*(maxTimer-minTimer)); //Random value between minTimer and maxTimer
         long current = System.currentTimeMillis();
-        long increase = 3000+(long) (Math.random()*(10000-3000)); //Random value between 3 and 10 seconds
         return current+increase;
     }
 }

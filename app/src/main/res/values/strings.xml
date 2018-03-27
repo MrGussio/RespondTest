@@ -12,4 +12,7 @@
     <string name="countTooLowMessage">Vul een getal groter dan 1 in.</string>
     <string name="wrong">Fout</string>
     <string name="test">Meting</string>
+    <string name="minTitle">Minimum aantal seconden tussen tests:</string>
+    <string name="maxTitle">Maximum aantal seconden tussen tests:</string>
+    <string name="minGreaterThanMaxMessage">Vul een minimaal getal in dat kleiner is dan je maximale getal.</string>
 </resources>

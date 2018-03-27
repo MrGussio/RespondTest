@@ -26,9 +26,10 @@
         android:id="@+id/soundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/amountTitle"
+        android:layout_alignStart="@+id/amountTitle"
         android:layout_below="@+id/introText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="16dp"
         android:text="@string/soundButton" />
 
     <Button
@@ -53,8 +54,32 @@
         android:inputType="numberSigned"
         android:text="10" />
 
+    <EditText
+        android:id="@+id/minCount"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/minDecreaseButton"
+        android:layout_toLeftOf="@+id/testCountDecreaseButton"
+        android:layout_toStartOf="@+id/testCountDecreaseButton"
+        android:ems="10"
+        android:gravity="center|clip_horizontal"
+        android:inputType="numberSigned"
+        android:text="3" />
+
+    <EditText
+        android:id="@+id/maxCount"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maxTitle"
+        android:layout_toEndOf="@+id/minIncreaseButton"
+        android:layout_toRightOf="@+id/minIncreaseButton"
+        android:ems="10"
+        android:gravity="center|clip_horizontal"
+        android:inputType="numberSigned"
+        android:text="10" />
+
     <Button
-        android:id="@+id/increaseButton"
+        android:id="@+id/testCountIncreaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/testCount"
@@ -63,7 +88,26 @@
         android:text="@string/plus" />
 
     <Button
-        android:id="@+id/decreaseButton"
+        android:id="@+id/minIncreaseButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/minCount"
+        android:layout_toLeftOf="@+id/minCount"
+        android:layout_toStartOf="@+id/minCount"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/maxIncreaseButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/maxCount"
+        android:layout_alignBottom="@+id/maxCount"
+        android:layout_toLeftOf="@+id/maxCount"
+        android:layout_toStartOf="@+id/maxCount"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/testCountDecreaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/testCount"
@@ -72,13 +116,40 @@
         android:layout_toRightOf="@+id/testCount"
         android:text="@string/minus" />
 
+    <Button
+        android:id="@+id/minDecreaseButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/minTitle"
+        android:layout_toEndOf="@+id/minCount"
+        android:layout_toRightOf="@+id/minCount"
+        android:text="@string/minus" />
+
+    <Button
+        android:id="@+id/maxDecreaseButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/maxCount"
+        android:layout_alignBottom="@+id/maxCount"
+        android:layout_toEndOf="@+id/maxCount"
+        android:layout_toRightOf="@+id/maxCount"
+        android:text="@string/minus" />
+
     <TextView
         android:id="@+id/amountTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/decreaseButton"
+        android:layout_above="@+id/testCountDecreaseButton"
         android:layout_centerHorizontal="true"
         android:text="@string/amountTitle" />
+
+    <TextView
+        android:id="@+id/minTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testCountDecreaseButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/minTitle" />
 
     <TextView
         android:id="@+id/copyright"
@@ -88,5 +159,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:text="@string/copyright" />
+
+    <TextView
+        android:id="@+id/maxTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/minIncreaseButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/maxTitle" />
 
 </RelativeLayout>
