@@ -22,9 +22,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <CheckBox
         android:id="@+id/soundButton"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/amountTitle"
         android:layout_alignStart="@+id/amountTitle"
@@ -32,12 +32,12 @@
         android:layout_marginTop="16dp"
         android:text="@string/soundButton" />
 
-    <Button
+    <CheckBox
         android:id="@+id/sightButton"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/soundButton"
-        android:layout_alignRight="@+id/soundButton"
+        android:layout_alignLeft="@+id/soundButton"
+        android:layout_alignStart="@+id/soundButton"
         android:layout_below="@+id/soundButton"
         android:layout_marginTop="16dp"
         android:text="@string/sightButton" />
@@ -58,9 +58,10 @@
         android:id="@+id/minCount"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/minDecreaseButton"
-        android:layout_toLeftOf="@+id/testCountDecreaseButton"
-        android:layout_toStartOf="@+id/testCountDecreaseButton"
+        android:layout_alignBaseline="@+id/minDecreaseButton"
+        android:layout_alignBottom="@+id/minDecreaseButton"
+        android:layout_toEndOf="@+id/testCountDecreaseButton"
+        android:layout_toRightOf="@+id/testCountDecreaseButton"
         android:ems="10"
         android:gravity="center|clip_horizontal"
         android:inputType="numberSigned"
@@ -71,8 +72,8 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/maxTitle"
-        android:layout_toEndOf="@+id/minIncreaseButton"
-        android:layout_toRightOf="@+id/minIncreaseButton"
+        android:layout_toEndOf="@+id/minDecreaseButton"
+        android:layout_toRightOf="@+id/minDecreaseButton"
         android:ems="10"
         android:gravity="center|clip_horizontal"
         android:inputType="numberSigned"
@@ -82,9 +83,9 @@
         android:id="@+id/testCountIncreaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/testCount"
-        android:layout_toLeftOf="@+id/testCount"
-        android:layout_toStartOf="@+id/testCount"
+        android:layout_alignBottom="@+id/testCount"
+        android:layout_toEndOf="@+id/testCount"
+        android:layout_toRightOf="@+id/testCount"
         android:text="@string/plus" />
 
     <Button
@@ -92,18 +93,17 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/minCount"
-        android:layout_toLeftOf="@+id/minCount"
-        android:layout_toStartOf="@+id/minCount"
+        android:layout_toEndOf="@+id/minCount"
+        android:layout_toRightOf="@+id/minCount"
         android:text="@string/plus" />
 
     <Button
         android:id="@+id/maxIncreaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/maxCount"
-        android:layout_alignBottom="@+id/maxCount"
-        android:layout_toLeftOf="@+id/maxCount"
-        android:layout_toStartOf="@+id/maxCount"
+        android:layout_below="@+id/maxTitle"
+        android:layout_toEndOf="@+id/maxCount"
+        android:layout_toRightOf="@+id/maxCount"
         android:text="@string/plus" />
 
     <Button
@@ -112,8 +112,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/testCount"
         android:layout_alignBottom="@+id/testCount"
-        android:layout_toEndOf="@+id/testCount"
-        android:layout_toRightOf="@+id/testCount"
+        android:layout_toLeftOf="@+id/testCount"
+        android:layout_toStartOf="@+id/testCount"
         android:text="@string/minus" />
 
     <Button
@@ -121,18 +121,17 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/minTitle"
-        android:layout_toEndOf="@+id/minCount"
-        android:layout_toRightOf="@+id/minCount"
+        android:layout_toLeftOf="@+id/minCount"
+        android:layout_toStartOf="@+id/minCount"
         android:text="@string/minus" />
 
     <Button
         android:id="@+id/maxDecreaseButton"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/maxCount"
-        android:layout_alignBottom="@+id/maxCount"
-        android:layout_toEndOf="@+id/maxCount"
-        android:layout_toRightOf="@+id/maxCount"
+        android:layout_below="@+id/maxTitle"
+        android:layout_toLeftOf="@+id/maxCount"
+        android:layout_toStartOf="@+id/maxCount"
         android:text="@string/minus" />
 
     <TextView
@@ -167,5 +166,15 @@
         android:layout_below="@+id/minIncreaseButton"
         android:layout_centerHorizontal="true"
         android:text="@string/maxTitle" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/amountTitle"
+        android:layout_alignStart="@+id/amountTitle"
+        android:layout_below="@+id/maxIncreaseButton"
+        android:layout_marginTop="16dp"
+        android:text="@string/start" />
 
 </RelativeLayout>

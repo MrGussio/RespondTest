@@ -8,6 +8,7 @@
     android:background="@android:color/darker_gray"
     android:clickable="true"
     android:contextClickable="true"
-    tools:context="gussio.nl.respondtest.SightActivity">
+    tools:context="gussio.nl.respondtest.TestActivity">
 
 </RelativeLayout>
+

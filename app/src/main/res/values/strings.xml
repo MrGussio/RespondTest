@@ -15,4 +15,6 @@
     <string name="minTitle">Minimum aantal seconden tussen tests:</string>
     <string name="maxTitle">Maximum aantal seconden tussen tests:</string>
     <string name="minGreaterThanMaxMessage">Vul een minimaal getal in dat kleiner is dan je maximale getal.</string>
+    <string name="start">Start</string>
+    <string name="noModeSelectedMessage">Je moet minimaal één testmodus selecteren.</string>
 </resources>
