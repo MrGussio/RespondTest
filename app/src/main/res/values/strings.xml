@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">RespondTest</string>
-    <string name="introText">Klik op één van de knoppen hieronder om een modus te selecteren.</string>
-    <string name="soundButton">Geluid</string>
-    <string name="sightButton">Zicht</string>
+    <string name="introText">Check one of the boxes below to select a mode.</string>
+    <string name="soundButton">Sound</string>
+    <string name="sightButton">Sight</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="results">Resultaten</string>
-    <string name="ok">Oké</string>
-    <string name="amountTitle">Aantal testen:</string>
-    <string name="copyright">© 2018 Jelle Hulter. Alle rechten voorbehouden.</string>
-    <string name="countTooLowMessage">Vul een getal groter dan 1 in.</string>
-    <string name="wrong">Fout</string>
-    <string name="test">Meting</string>
-    <string name="minTitle">Minimum aantal seconden tussen tests:</string>
-    <string name="maxTitle">Maximum aantal seconden tussen tests:</string>
-    <string name="minGreaterThanMaxMessage">Vul een minimaal getal in dat kleiner is dan je maximale getal.</string>
+    <string name="results">Results</string>
+    <string name="ok">OK</string>
+    <string name="amountTitle">Amount of tests:</string>
+    <string name="copyright">© 2018 Gussio / Jelle Hulter. All rights reserved.</string>
+    <string name="countTooLowMessage">Enter a digit bigger than 1.</string>
+    <string name="wrong">Wrong</string>
+    <string name="test">Test</string>
+    <string name="minTitle">Minimum amount of seconds between tests:</string>
+    <string name="maxTitle">Maximum amount of seconds between tests:</string>
+    <string name="minGreaterThanMaxMessage">Please enter a minimum amount of secconds between tests that is bigger than your maximum amount of seconds between tests.</string>
     <string name="start">Start</string>
-    <string name="noModeSelectedMessage">Je moet minimaal één testmodus selecteren.</string>
-    <string name="average">Gemiddelde</string>
+    <string name="noModeSelectedMessage">Please select atleast one mode.</string>
+    <string name="average">Average</string>
 </resources>

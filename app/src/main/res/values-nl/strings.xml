@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RespondTest</string>
+    <string name="introText">Klik op één van de knoppen hieronder om een modus te selecteren.</string>
+    <string name="soundButton">Geluid</string>
+    <string name="sightButton">Zicht</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="results">Resultaten</string>
+    <string name="ok">Oké</string>
+    <string name="amountTitle">Aantal testen:</string>
+    <string name="countTooLowMessage">Vul een getal groter dan 1 in.</string>
+    <string name="wrong">Fout</string>
+    <string name="test">Meting</string>
+    <string name="minTitle">Minimum aantal seconden tussen tests:</string>
+    <string name="maxTitle">Maximum aantal seconden tussen tests:</string>
+    <string name="minGreaterThanMaxMessage">Vul een minimaal getal in dat kleiner is dan je maximale getal.</string>
+    <string name="start">Start</string>
+    <string name="noModeSelectedMessage">Je moet minimaal één testmodus selecteren.</string>
+    <string name="average">Gemiddelde</string>
+    <string name="copyright">© 2018 Gussio / Jelle Hulter. Alle rechten voorbehouden.</string>
+</resources>
