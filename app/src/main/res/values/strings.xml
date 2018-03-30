@@ -17,4 +17,5 @@
     <string name="minGreaterThanMaxMessage">Vul een minimaal getal in dat kleiner is dan je maximale getal.</string>
     <string name="start">Start</string>
     <string name="noModeSelectedMessage">Je moet minimaal één testmodus selecteren.</string>
+    <string name="average">Gemiddelde</string>
 </resources>
