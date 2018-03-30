@@ -32,7 +32,7 @@ public class TestActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_sight);
+        setContentView(R.layout.activity_test);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.beep);
 
@@ -99,9 +99,12 @@ public class TestActivity extends AppCompatActivity {
                                 layout.setBackgroundColor(Color.GRAY);
                                 if(count == 0){
                                     String message = "";
+                                    int average = 0;
                                     for(int i = 0; i < results.length; i++){
                                         message = message+getString(R.string.test)+" "+(i+1)+": "+(results[i] > 0 ? results[i]+"ms": "Fout.")+"\n";
+                                        average += results[i];
                                     }
+                                    message = message+"\nAverage: "+(average/ results.length)+"ms";
                                     AlertDialog alertDialog = new AlertDialog.Builder(TestActivity.this, R.style.ThemeOverlay_AppCompat_Dark).create();
                                     alertDialog.setTitle(R.string.results);
                                     alertDialog.setMessage(message);
