@@ -59,7 +59,7 @@ public class TestActivity extends AppCompatActivity {
                     cooldown = 0L;
                     resetCooldown = System.currentTimeMillis()+500;
                     layout.setBackgroundColor(Color.GREEN);
-                    if(sound)
+                    if(sound && mediaPlayer.isPlaying())
                         mediaPlayer.pause();
                 }else if(cooldown > 0L){
                     results[results.length-count]=-1;
@@ -68,7 +68,7 @@ public class TestActivity extends AppCompatActivity {
                     cooldown = 0L;
                     resetCooldown = System.currentTimeMillis()+500;
                     layout.setBackgroundColor(Color.RED);
-                    if(sound)
+                    if(sound && mediaPlayer.isPlaying())
                         mediaPlayer.pause();
                 }
                 return false;
