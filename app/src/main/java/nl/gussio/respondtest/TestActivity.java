@@ -104,7 +104,7 @@ public class TestActivity extends AppCompatActivity {
                                         message = message+getString(R.string.test)+" "+(i+1)+": "+(results[i] > 0 ? results[i]+"ms": getString(R.string.wrong))+"\n";
                                         average += results[i];
                                     }
-                                    message = message+"\n+"+getString(R.string.average)+": "+(average/ results.length)+"ms";
+                                    message = message+"\n"+getString(R.string.average)+": "+(average/ results.length)+"ms";
                                     AlertDialog alertDialog = new AlertDialog.Builder(TestActivity.this, R.style.ThemeOverlay_AppCompat_Dark).create();
                                     alertDialog.setTitle(R.string.results);
                                     alertDialog.setMessage(message);
