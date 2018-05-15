@@ -100,11 +100,15 @@ public class TestActivity extends AppCompatActivity {
                                 if(count == 0){
                                     String message = "";
                                     int average = 0;
+                                    int count = 0;
                                     for(int i = 0; i < results.length; i++){
-                                        message = message+getString(R.string.test)+" "+(i+1)+": "+(results[i] > 0 ? results[i]+"ms": getString(R.string.wrong))+"\n";
-                                        average += results[i];
+                                        message = message + getString(R.string.test) + " " + (i + 1) + ": " + (results[i] > 0 ? results[i] + "ms" : getString(R.string.wrong)) + "\n";
+                                        if(results[i] > 0) {
+                                            average += results[i];
+                                            count++;
+                                        }
                                     }
-                                    message = message+"\n"+getString(R.string.average)+": "+(average/ results.length)+"ms";
+                                    message = message+"\n"+getString(R.string.average)+": "+(count>0?(Math.round(average/count)):"-")+"ms";
                                     AlertDialog alertDialog = new AlertDialog.Builder(TestActivity.this, R.style.ThemeOverlay_AppCompat_Dark).create();
                                     alertDialog.setTitle(R.string.results);
                                     alertDialog.setMessage(message);
