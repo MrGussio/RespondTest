@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button testCountIncreaseButton, testCountDecreaseButton, minIncreaseButton, minDecreaseButton, maxIncreaseButton, maxDecreaseButton, startbutton;
     private CheckBox sightButton, soundButton;
     private EditText testCount, minCount, maxCount;
+    private int countVal, minTimerVal, maxTimerVal;
+    private boolean sightVal, soundVal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
         minCount = findViewById(R.id.minCount);
         maxCount = findViewById(R.id.maxCount);
         startbutton = findViewById(R.id.startButton);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        countVal = sharedPref.getInt("testCount", R.integer.testCountDefault);
+        minTimerVal = sharedPref.getInt("minCount", R.integer.minCountDefault)*1000;
+        maxTimerVal = sharedPref.getInt("maxCount", R.integer.maxCountDefault)*1000;
+        sightVal = sharedPref.getBoolean("sight", false);
+        soundVal = sharedPref.getBoolean("sound", false);
+
+        testCount.setText(countVal+"");
+        minCount.setText(minTimerVal/1000+"");
+        maxCount.setText(maxTimerVal/1000+"");
+        sightButton.setChecked(sightVal);
+        soundButton.setChecked(soundVal);
 
         testCountIncreaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,8 +162,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        try {
+            editor.putInt("testCount", Integer.parseInt(testCount.getText().toString()));
+            editor.putInt("minCount", Integer.parseInt(minCount.getText().toString()));
+            editor.putInt("maxCount", Integer.parseInt(maxCount.getText().toString()));
+            editor.putBoolean("sound", soundButton.isChecked());
+            editor.putBoolean("sight", sightButton.isChecked());
+            editor.commit();
+        } catch (Exception e){
+            editor.clear();
+        }
+    }
 
 }
